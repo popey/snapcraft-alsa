@@ -8,7 +8,9 @@ fi
 
 USE_PA_FILENAME="Always use PulseAudio"
 USE_PA_FILEPATH="$SNAP_USER_COMMON/$USE_PA_FILENAME"
-touch "$USE_PA_FILEPATH"
+# Ninja this in so we never get a popup on Mindustry which uses padsp
+# If some logic appears upstream we may revert back to that
+echo "ALWAYS_USE_PULSEAUDIO=1" > "$USE_PA_FILEPATH" 
 
 popup() {
   TEXT="$SNAP_READABLE_NAME may have better audio device support if granted permission to access the ALSA audio system.
