@@ -8,6 +8,7 @@ fi
 
 USE_PA_FILENAME="Always use PulseAudio"
 USE_PA_FILEPATH="$SNAP_USER_COMMON/$USE_PA_FILENAME"
+touch $USE_PA_FILEPATH
 
 popup() {
   TEXT="$SNAP_READABLE_NAME may have better audio device support if granted permission to access the ALSA audio system.
